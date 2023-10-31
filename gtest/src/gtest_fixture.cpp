@@ -5,6 +5,7 @@
 // SetUp() and TearDown() are called for EACH TEST_F() test case
 // equivalent to constructor and destructor
 
+namespace {
 class studentTest : public testing::Test {
 protected:
 
@@ -25,11 +26,25 @@ TEST_F(studentTest, test_constructor) {
     EXPECT_EQ(s2.get_name(), "Jacky");
     EXPECT_EQ(s3.get_age(), 22);
     EXPECT_EQ(s3.get_name(), "Joseph");
-    s1.change_name("Johny");
-    EXPECT_EQ(s1.get_name(), "Johny");
 }
 
-int main(int argc, char** argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+TEST_F(studentTest, test_change_name) {
+    EXPECT_EQ(s1.get_name(), "John");
+    s1.change_name("Johny");
+    EXPECT_EQ(s1.get_name(), "Johny");
+    s2.change_name("Jack");
+    EXPECT_EQ(s2.get_name(), "Jack");
+    s3.change_name("Joe");
+    EXPECT_EQ(s3.get_name(), "Joe");
 }
+
+// TEST(test_student, test_constructor) {
+//     student s(20, "John");
+//     EXPECT_EQ(s.get_age(), 20);
+//     EXPECT_EQ(s.get_name(), "John");
+// }
+}
+// int main(int argc, char** argv) {
+//     testing::InitGoogleTest(&argc, argv);
+//     return RUN_ALL_TESTS();
+// }

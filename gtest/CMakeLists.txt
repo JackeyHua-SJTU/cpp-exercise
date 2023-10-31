@@ -18,7 +18,7 @@ aux_source_directory(src DIR_SRCS)
 
 # All source files that needs to be compiled
 # only 1 main function is allowed
-add_executable(gtest src/student.cpp src/gtest_fixture.cpp)
+add_executable(gtest ${DIR_SRCS})
 
 # Link libraries
 # 将libgtest.a libgtest_main.a链接到gtest
