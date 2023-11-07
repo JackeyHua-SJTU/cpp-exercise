@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # ref : https://linuxconfig.org/bash-scripting-tutorial
 
